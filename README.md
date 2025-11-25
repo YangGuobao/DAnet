@@ -22,7 +22,7 @@
 
 <div align="center">
     <h3>
-        <a href="#english">English</a> | <a href="#chinese">中文</a>
+        <a href="#english">English</a> | <a href="#chinese">中文说明</a>
     </h3>
 </div>
 
@@ -103,10 +103,17 @@ If you use this code for your research, please cite our paper:
 ## Acknowledgements
 We appreciate the open-source community. Part of this code is inspired by [BIT](https://github.com/justchenhao/BIT_CD) and [ChangeFormer](https://github.com/wgcban/ChangeFormer).
 
----
+<br/>
+<br/>
+<hr>
+<br/>
 <br/>
 
 <span id="chinese"></span>
+
+<div align="center">
+    <h3><a href="#english">⬆️ Back to English</a></h3>
+</div>
 
 ## 简介 (Introduction)
 
