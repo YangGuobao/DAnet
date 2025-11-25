@@ -36,3 +36,12 @@ Please ensure your environment meets the following requirements:
 - Other dependencies:
   ```bash
   pip install -r requirements.txt
+Dataset_Root/
+├── A/          # T1 images
+├── B/          # T2 images
+├── label/      # Ground Truth (Binary: 0/255)
+└── list/       # Data splits
+    ├── train.txt
+    ├── val.txt
+    └── test.txt
+python train.py --data_dir /path/to/your/dataset --batch_size 8 --epochs 200
