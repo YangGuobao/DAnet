@@ -51,27 +51,46 @@ The code has been tested on **Linux** with **Python 3.8** and **PyTorch 1.10**.
 - Other dependencies:
   ```bash
   pip install -r requirements.txt
-  Dataset Preparation
-We follow the standard directory structure used in LEVIR-CD, WHU-CD, and other mainstream datasets.
+  ```
+
+## Dataset Preparation
+
+We follow the standard directory structure used in **LEVIR-CD**, **WHU-CD**, and other mainstream datasets.
 
 Please organize your dataset as follows:
+
+```text
 Dataset_Root/
 ├── A/          # T1 images (Pre-event)
 ├── B/          # T2 images (Post-event)
-├── label/      # Ground Truth (Binary: 0 for unchanged, 255 for changed)
+├── label/      # Ground Truth (Binary: 0/255)
 └── list/       # Data split files
     ├── train.txt
     ├── val.txt
     └── test.txt
-Usage
-1. Training
-You can train the model using the following command. Adjust the --data_dir to your dataset path.
+```
+
+## Usage
+
+### 1. Training
+You can train the model using the following command. Adjust the `--data_dir` to your dataset path.
+
+```bash
 python train.py --data_dir /path/to/your/dataset --batch_size 8 --epochs 200 --lr 0.0001
-2. Evaluation
+```
+
+### 2. Evaluation
 To evaluate the model on the test set:
+
+```bash
 python test.py --weights ./checkpoints/best_model.pth --data_dir /path/to/your/dataset
-Citation
+```
+
+## Citation
+
 If you use this code for your research, please cite our paper:
+
+```bibtex
 @article{DAnet2025,
   title={DAnet: Dual Attention Mechanism for Efficient Binary Change Detection in Remote Sensing Imagery},
   author={Yang, Guobao and et al.},
@@ -79,36 +98,46 @@ If you use this code for your research, please cite our paper:
   year={2025},
   note={Accepted/Under Review}
 }
-Acknowledgements
-We appreciate the open-source community for their contributions. Part of this code is inspired by BIT and ChangeFormer.
+```
+
+## Acknowledgements
+We appreciate the open-source community. Part of this code is inspired by [BIT](https://github.com/justchenhao/BIT_CD) and [ChangeFormer](https://github.com/wgcban/ChangeFormer).
+
+---
+<br/>
+
 <span id="chinese"></span>
-简介 (Introduction)
-DAnet (Dual Attention Network) 是一个用于高分辨率遥感图像二值变化检测的鲁棒深度学习框架。
 
-与传统方法不同，DAnet 专门针对复杂场景（如西部山地、季节性变化显著区域）的难点进行了优化。它引入了双重注意力机制（空间注意力与通道注意力），能够有效提取关键特征并抑制伪变化。
+## 简介 (Introduction)
 
-核心特性
-双重注意力机制：同时捕捉长距离的空间依赖关系和通道间的特征关联。
+**DAnet** (Dual Attention Network) 是一个用于高分辨率遥感图像二值变化检测的鲁棒深度学习框架。
 
-强鲁棒性：针对双时相图像外观差异巨大的复杂环境进行了优化。
+与传统方法不同，DAnet 专门针对**复杂场景**（如西部山地、季节性变化显著区域）的难点进行了优化。它引入了**双重注意力机制**（空间注意力与通道注意力），能够有效提取关键特征并抑制伪变化。
 
-高效性：在检测精度和计算成本之间取得了优异的平衡。
+### 核心特性
+- **双重注意力机制**：同时捕捉长距离的空间依赖关系和通道间的特征关联。
+- **强鲁棒性**：针对双时相图像外观差异巨大的复杂环境进行了优化。
+- **高效性**：在检测精度和计算成本之间取得了优异的平衡。
 
-环境要求 (Requirements)
-代码已在 Linux 环境下，使用 Python 3.8 和 PyTorch 1.10 完成测试。
+## 环境要求 (Requirements)
 
-Python 3.8+
+代码已在 **Linux** 环境下，使用 **Python 3.8** 和 **PyTorch 1.10** 完成测试。
 
-PyTorch 1.8+
+- Python 3.8+
+- PyTorch 1.8+
+- CUDA 11.0+
+- 安装依赖库：
+  ```bash
+  pip install -r requirements.txt
+  ```
 
-CUDA 11.0+
+## 数据准备 (Data Preparation)
 
-安装依赖库：
-pip install -r requirements.txt
-数据准备 (Data Preparation)
-我们采用与 LEVIR-CD、WHU-CD 等主流数据集一致的标准目录结构。
+我们采用与 **LEVIR-CD**、**WHU-CD** 等主流数据集一致的标准目录结构。
 
 请按以下方式组织您的数据：
+
+```text
 Dataset_Root/
 ├── A/          # T1 时相图像 (变化前)
 ├── B/          # T2 时相图像 (变化后)
@@ -117,14 +146,29 @@ Dataset_Root/
     ├── train.txt
     ├── val.txt
     └── test.txt
-使用说明 (Usage)
-1. 训练 (Training)
-使用以下命令启动训练。请将 --data_dir 修改为您的数据集路径。
-2. 评估 (Evaluation)
+```
+
+## 使用说明 (Usage)
+
+### 1. 训练 (Training)
+使用以下命令启动训练。请将 `--data_dir` 修改为您的数据集路径。
+
+```bash
+python train.py --data_dir /path/to/your/dataset --batch_size 8 --epochs 200 --lr 0.0001
+```
+
+### 2. 评估 (Evaluation)
 在测试集上评估模型性能：
+
+```bash
 python test.py --weights ./checkpoints/best_model.pth --data_dir /path/to/your/dataset
-引用 (Citation)
+```
+
+## 引用 (Citation)
+
 如果您在研究中使用了本项目的代码，请引用我们的论文：
+
+```bibtex
 @article{DAnet2025,
   title={DAnet: Dual Attention Mechanism for Efficient Binary Change Detection in Remote Sensing Imagery},
   author={Yang, Guobao and et al.},
@@ -132,7 +176,7 @@ python test.py --weights ./checkpoints/best_model.pth --data_dir /path/to/your/d
   year={2025},
   note={Accepted/Under Review}
 }
-致谢 (Acknowledgements)
-感谢开源社区的贡献。本项目的代码部分参考了 BIT 和 ChangeFormer。
-许可 (License)
-本项目基于 Apache 2.0 License 开源。
+```
+
+## 许可 (License)
+本项目基于 [Apache 2.0 License](LICENSE) 开源。
