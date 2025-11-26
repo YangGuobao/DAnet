@@ -40,15 +40,14 @@ Existing remote sensing change detection methods are often disturbed by pseudo-c
     * Utilizes **$L_{tc}$ (Temporal Consistency Loss)** to forcibly align change-invariant features to learn temporal invariance.
     * Utilizes **$L_{cs}$ (Contrastive Separation Loss)** to push apart change-sensitive features in changed areas and pull them closer in unchanged areas, enhancing separability.
 
-The model achieves superior performance on datasets such as **LEVIR-CD, WHU-CD, SYSU-CD, and DSIFN**.
+The model achieves superior performance on datasets such as **WHU-CD, CDD, and S2Looking**.
 
 ## Requirements
 
-The code has been tested on **Linux** with **Python 3.8** and **PyTorch 1.10**.
+The code has been tested with **Python 3.8** and **PyTorch 2.10**.
 
 - Python 3.8+
-- PyTorch 1.8+ 
-- CUDA 11.0+
+- PyTorch 2.1+ 
 - Other dependencies:
   ```bash
   pip install -r requirements.txt
@@ -56,35 +55,46 @@ The code has been tested on **Linux** with **Python 3.8** and **PyTorch 1.10**.
 
 ## Dataset Preparation
 
-We follow the standard directory structure used in **LEVIR-CD**, **WHU-CD**, and other mainstream datasets.
+We follow the standard directory structure used in **WHU-CD, CDD, and S2Looking**, and other mainstream datasets.
 
 Please organize your dataset as follows:
 
 ```text
-Dataset_Root/
-├── A/          # T1 images (Pre-event)
-├── B/          # T2 images (Post-event)
-├── label/      # Ground Truth (Binary: 0/255)
-└── list/       # Data split files
-    ├── train.txt
-    ├── val.txt
-    └── test.txt
+data/
+ ├── WHU-CD
+    ├── train/         
+        ├── A/          # T1 images (Pre-event)
+        ├── B/          # T2 images (Post-event)
+        ├── label/      # Ground Truth (Binary: 0/255)
+    ├── test/
+        ├── A/          # T1 images (Pre-event)
+        ├── B/          # T2 images (Post-event)
+        ├── label/      # Ground Truth (Binary: 0/255)          
+    ├── val/
+        ├── A/          # T1 images (Pre-event)
+        ├── B/          # T2 images (Post-event)
+        ├── label/      # Ground Truth (Binary: 0/255)      
+ ├── CDD
+    .
+    .
+    .
+ └── S2Looking
 ```
 
 ## Usage
 
 ### 1. Training
-You can train the model using the following command. Adjust the `--data_dir` to your dataset path.
+You can train the model using the following command. 
 
 ```bash
-python train.py --data_dir /path/to/your/dataset --batch_size 8 --epochs 200 --lr 0.0001
+python train.py --dataset_root ./data --data_name CDD --backbone pvt_v2_b1 --pretrained True --batchsize 8 --epoch 200 --lr 0.0001 --lambda_tc 0.5 --lambda_cs 0.5 --contrastive_margin 1.0 
 ```
 
 ### 2. Evaluation
 To evaluate the model on the test set:
 
 ```bash
-python test.py --weights ./checkpoints/best_model.pth --data_dir /path/to/your/dataset
+python test.py --dataset_root ./data --data_name CDD --backbone pvt_v2_b1 --checkpoint_path ./checkpoints/best_model.pth(Your pth file)
 ```
 
 ## Citation
