@@ -1,7 +1,7 @@
-# DAnet: Dual Attention Network for Remote Sensing Change Detection
+# D&A-CDNet: Decouple-then-Align Change Detection Network
 
 <div align="center">
-  <img src="figures/structure.png" width="800" alt="DAnet Architecture"/>
+  <img src="figures/structure.png" width="800" alt="D&A-CDNet Architecture"/>
 </div>
 
 <br/>
@@ -30,14 +30,17 @@
 
 ## Introduction
 
-**DAnet** (Dual Attention Network) is a robust deep learning framework designed for binary change detection in high-resolution remote sensing imagery. 
+This is the official implementation of **D&A-CDNet** (Decouple-then-Align Change Detection Network).
 
-Unlike traditional methods, DAnet specifically addresses the challenges of **complex scenes** (e.g., mountainous areas, seasonal variations) by incorporating a **Dual Attention Mechanism** (Spatial & Channel) to refine feature representations and suppress pseudo-changes.
+Existing remote sensing change detection methods are often disturbed by pseudo-changes (e.g., seasonal variations, lighting differences). We argue that the root cause lies in the high coupling of features. To address this, we propose a new paradigm of **"Decouple-then-Align"**:
 
-### Key Features
-- **Dual Attention Mechanism**: Simultaneously captures long-range spatial dependencies and channel-wise feature correlations.
-- **Robustness**: Optimized for complex environments with significant appearance differences between dual-temporal images.
-- **Efficiency**: Achieves a superior balance between accuracy and computational cost.
+* **Feature Decoupling**: Explicitly decomposes bi-temporal features into **Change-Invariant** and **Change-Sensitive** subspaces via a Feature Decoupling Module (FDM).
+
+* **Asymmetric Alignment**:
+    * Utilizes **$L_{tc}$ (Temporal Consistency Loss)** to forcibly align change-invariant features to learn temporal invariance.
+    * Utilizes **$L_{cs}$ (Contrastive Separation Loss)** to push apart change-sensitive features in changed areas and pull them closer in unchanged areas, enhancing separability.
+
+The model achieves superior performance on datasets such as **LEVIR-CD, WHU-CD, SYSU-CD, and DSIFN**.
 
 ## Requirements
 
@@ -89,8 +92,8 @@ python test.py --weights ./checkpoints/best_model.pth --data_dir /path/to/your/d
 If you use this code for your research, please cite our paper:
 
 ```bibtex
-@article{DAnet2025,
-  title={DAnet: Dual Attention Mechanism for Efficient Binary Change Detection in Remote Sensing Imagery},
+@article{DACDNet2025,
+  title={D&A-CDNet: Decouple-then-Align Change Detection Network for Remote Sensing},
   author={Yang, Guobao and et al.},
   journal={IEEE Transactions on Geoscience and Remote Sensing (TGRS)},
   year={2025},
