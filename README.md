@@ -81,6 +81,11 @@ data/
  └── S2Looking
 ```
 
+## Dataset Preparation
+We provide the pretrained weights for the backbone and our trained D&A-CDNet models.
+| Model / Backbone | Dataset | Download Link | Password |
+| :--- | :--- | :--- | :--- |
+| **pvt_v2_b1** | ImageNet | [Baidu Netdisk](此处填入您的百度网盘链接) | `xxxx` |
 ## Usage
 
 ### 1. Training
