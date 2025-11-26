@@ -14,7 +14,7 @@
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License">
     </a>
     <a href="https://pytorch.org/">
-        <img src="https://img.shields.io/badge/PyTorch-1.8%2B-ee4c2c.svg" alt="PyTorch">
+        <img src="https://img.shields.io/badge/PyTorch-2.1%2B-ee4c2c.svg" alt="PyTorch">
     </a>
 </div>
 
