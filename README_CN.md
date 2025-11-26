@@ -80,6 +80,15 @@ data/
     .
  └── S2Looking
 ```
+## 预训练权重 (Pretrained Weights)
+
+我们提供了骨干网络和训练好的 D&A-CDNet 模型的预训练权重。
+
+| 模型 | 下载链接 | 提取码 |
+| :--- | :--- | :--- |
+| **Backbone** | [百度网盘](https://pan.baidu.com/s/1cwkNe2cN6XnMnaZg99bGNQ) | `9810` |
+
+请下载权重并在训练和评估前将其放入 `DAnet/` 文件夹中。
 
 ## 使用说明 (Usage)
 
