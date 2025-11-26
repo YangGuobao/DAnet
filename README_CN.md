@@ -1,7 +1,7 @@
-# DAnet: 双重注意力遥感图像变化检测网络
+# D&A-CDNet: “先解耦，后对齐”遥感变化检测网络
 
 <div align="center">
-  <img src="figures/structure.png" width="800" alt="DAnet Architecture"/>
+  <img src="figures/structure.png" width="800" alt="D&A-CDNet Architecture"/>
 </div>
 
 <br/>
@@ -30,14 +30,17 @@
 
 ## 简介 (Introduction)
 
-**DAnet** (Dual Attention Network) 是一个用于高分辨率遥感图像二值变化检测的鲁棒深度学习框架。
+这是 **D&A-CDNet** (Decouple-then-Align Change Detection Network) 的官方实现代码。
 
-与传统方法不同，DAnet 专门针对**复杂场景**（如西部山地、季节性变化显著区域）的难点进行了优化。它引入了**双重注意力机制**（空间注意力与通道注意力），能够有效提取关键特征并抑制伪变化。
+现有的遥感变化检测方法经常受到伪变化（如季节、光照差异）的干扰。我们认为其根本原因在于特征的高度耦合。为了解决这个问题，我们提出了一种**“先解耦，后对齐”**的新范式：
 
-### 核心特性
-- **双重注意力机制**：同时捕捉长距离的空间依赖关系和通道间的特征关联。
-- **强鲁棒性**：针对双时相图像外观差异巨大的复杂环境进行了优化。
-- **高效性**：在检测精度和计算成本之间取得了优异的平衡。
+* **特征解耦 (Feature Decoupling)**: 通过特征解耦模块 (FDM) 将双时相特征显式分解为**变化无关 (Change-Invariant)** 和 **变化敏感 (Change-Sensitive)** 两个子空间。
+
+* **非对称对齐 (Asymmetric Alignment)**:
+    * 利用 $L_{tc}$ (时序一致性损失) 强制对齐变化无关特征，学习时序不变性。
+    * 利用 $L_{cs}$ (对比分离损失) 在变化区域推远、不变区域拉近变化敏感特征，增强可分性。
+
+该模型在 **LEVIR-CD, WHU-CD, SYSU-CD 和 DSIFN** 等数据集上均取得了优异的性能。
 
 ## 环境要求 (Requirements)
 
@@ -89,8 +92,8 @@ python test.py --weights ./checkpoints/best_model.pth --data_dir /path/to/your/d
 如果您在研究中使用了本项目的代码，请引用我们的论文：
 
 ```bibtex
-@article{DAnet2025,
-  title={DAnet: Dual Attention Mechanism for Efficient Binary Change Detection in Remote Sensing Imagery},
+@article{DACDNet2025,
+  title={D&A-CDNet: Decouple-then-Align Change Detection Network for Remote Sensing},
   author={Yang, Guobao and et al.},
   journal={IEEE Transactions on Geoscience and Remote Sensing (TGRS)},
   year={2025},
