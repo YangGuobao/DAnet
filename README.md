@@ -83,7 +83,7 @@ data/
 ## Pretrained Weights
 We provide the pretrained weights for the backbone and our trained D&A-CDNet models.
 | Model | Download Link | Code |
-| :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- |
 | **Backbone** | [Baidu Netdisk](https://pan.baidu.com/s/1cwkNe2cN6XnMnaZg99bGNQ) | `9810` |
 ## Usage
 
