@@ -85,6 +85,9 @@ We provide the pretrained weights for the backbone and our trained D&A-CDNet mod
 | Model | Download Link | Code |
 | :--- | :--- | :--- |
 | **Backbone** | [Baidu Netdisk](https://pan.baidu.com/s/1cwkNe2cN6XnMnaZg99bGNQ) | `9810` |
+
+Please download the weights and place them in the DAnet/ folder before training and evaluation.
+
 ## Usage
 
 ### 1. Training
