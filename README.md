@@ -132,7 +132,7 @@ If you use this code for your research, please cite our paper:
 @article{DACDNet2025,
   title={Decouple then Align: A Disentangled Representation Learning Framework for Remote Sensing Change Detection},
   author={Yang, Guobao and et al.},
-  journal={IEEE Transactions on Geoscience and Remote Sensing (TGRS)},
+  journal={)},
   year={2025},
   note={Under Review}
 }
