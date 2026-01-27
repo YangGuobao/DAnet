@@ -7,9 +7,6 @@
 <br/>
 
 <div align="center">
-    <a href="https://github.com/YangGuobao/DAnet">
-        <img src="https://img.shields.io/badge/Paper-TGRS%202025-red.svg" alt="Paper">
-    </a>
     <a href="https://github.com/YangGuobao/DAnet/blob/main/LICENSE">
         <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License">
     </a>
