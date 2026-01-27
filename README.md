@@ -1,4 +1,4 @@
-![tsne_3d_rotation](https://github.com/user-attachments/assets/53fe7f5e-48b2-441a-ae3f-d5fb5a861f32)# Decouple then Align: A Disentangled Representation Learning Framework for Remote Sensing Change Detection
+# Decouple then Align: A Disentangled Representation Learning Framework for Remote Sensing Change Detection
 
 <div align="center">
   <img src="figures/structure.png" width="800" alt="D&A-CDNet Architecture"/>
