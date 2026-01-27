@@ -45,6 +45,21 @@ The proposed method achieves SOTA performance on **WHU-CD** ($F_1$ 96.04%) and *
 | D&A-CDNet | PVT v2-B1 | **WHU-CD** | 96.54 | 95.55 | **96.04** | **92.39** |
 | D&A-CDNet | PVT v2-B1 | **CDD** | 97.68 | 96.89 | **97.28** | **94.71** |
 
+<br/>
+**Feature Manifold Visualization (t-SNE)**
+
+<div align="center">
+  <img src="figures/tsne.png" width="800" alt="t-SNE Visualization"/>
+  <br/>
+  <div style="color: #808080; text-align: center; width: 80%;">
+    <b>Figure 8. t-SNE visualization of feature manifolds on the CDD dataset.</b> <br/>
+    (a) <b>Baseline</b>: Features of changed pixels (red) and unchanged pixels (blue) are severely entangled without explicit constraints. <br/>
+    (b) <b>Ours</b>: Features form distinct, compact, and independent clusters with clear decision boundaries, demonstrating the effectiveness of the orthogonal alignment strategy in feature decoupling.
+  </div>
+</div>
+
+<br/>
+
 > **Note**: Our model achieves a good trade-off between performance and efficiency, with **46.21 M** parameters and **13.08 G** FLOPs (256x256 input).
 
 ## 🛠️ Requirements
