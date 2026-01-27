@@ -1,4 +1,4 @@
-# Decouple then Align: A Disentangled Representation Learning Framework for Remote Sensing Change Detection
+![tsne_3d_rotation](https://github.com/user-attachments/assets/53fe7f5e-48b2-441a-ae3f-d5fb5a861f32)# Decouple then Align: A Disentangled Representation Learning Framework for Remote Sensing Change Detection
 
 <div align="center">
   <img src="figures/structure.png" width="800" alt="D&A-CDNet Architecture"/>
@@ -49,7 +49,7 @@ The proposed method achieves SOTA performance on **WHU-CD** ($F_1$ 96.04%) and *
 **Feature Manifold Visualization (t-SNE)**
 
 <div align="center">
-  <img src="figures/tsne.png" width="800" alt="t-SNE Visualization"/>
+  <img src="figures/tsne_3d_rotation.gif" width="800" alt="t-SNE Visualization"/>
   <br/>
   <div style="color: #808080; text-align: center; width: 80%;">
     <b>Figure 8. t-SNE visualization of feature manifolds on the CDD dataset.</b> <br/>
