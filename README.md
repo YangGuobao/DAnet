@@ -142,11 +142,11 @@ python test.py \
 If you use this code for your research, please cite our paper:
 
 ```bibtex
-@article{DACDNet2025,
+@article{DACDNet2026,
   title={Decouple then Align: A Disentangled Representation Learning Framework for Remote Sensing Change Detection},
   author={Yang, Guobao and et al.},
-  journal={)},
-  year={2025},
+  journal={},
+  year={2026},
   note={Under Review}
 }
 ```
